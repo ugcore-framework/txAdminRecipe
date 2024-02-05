@@ -22,9 +22,6 @@ tasks:
   - action: move_path
     src: ./tmp/ug-core/myLogo.png
     dest: ./myLogo.png
-  - action: move_path
-    src: ./tmp/ug-core/myLogo.png
-    dest: ./myLogo.png
   
   #####################
   # Database Creation #
