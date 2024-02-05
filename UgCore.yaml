@@ -1,6 +1,6 @@
 $engine: 3
 $onesync: on
-name: UgCore Framework
+name: UgCore
 version: 3.5.0
 author: UgDev
 description: UgCore is an advanced FiveM RPG Framework made for RP and PVP servers.
