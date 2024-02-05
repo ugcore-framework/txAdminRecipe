@@ -1,0 +1,169 @@
+$engine: 3
+$onesync: on
+name: UgCore Framework
+version: 3.5.0
+author: UgDev
+description: UgCore is an advanced FiveM RPG Framework made for RP and PVP servers.
+
+tasks:
+  #########################
+  # Download Server Files #
+  #########################
+  - action: download_github
+    src: https://github.com/ugcore-framework/txAdminRecipe
+    ref: main
+    dest: ./tmp/ug-core
+  - action: move_path
+    src: ./tmp/ug-core/server.cfg
+    dest: ./server.cfg
+  - action: move_path
+    src: ./tmp/ug-core/resources.cfg
+    dest: ./resources.cfg
+  - action: move_path
+    src: ./tmp/ug-core/myLogo.png
+    dest: ./myLogo.png
+  - action: move_path
+    src: ./tmp/ug-core/myLogo.png
+    dest: ./myLogo.png
+  
+  #####################
+  # Database Creation #
+  #####################
+  - action: connect_database
+  - action: query_database
+    file: ./tmp/ug-core/UgCore.sql
+
+  #############
+  # Resources #
+  #############
+
+  # FiveM Default #
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    subpath: resources
+    dest: ./resources/[cfx-default]
+
+  # Database #
+  - action: download_file
+    path: ./tmp/ug-core/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[UgCore]
+    src: ./tmp/ug-core/files/oxmysql.zip
+
+  # bob74_ipl #
+  - action: download_github
+    dest: ./resources/[standalone]/bob74_ipl
+    ref: master
+    src: https://github.com/ugcore-framework/bob74_ipl
+
+  # screenshot-basic #
+  - action: download_github
+    dest: ./resources/[standalone]/screenshot-basic
+    ref: master
+    src: https://github.com/ugcore-framework/screenshot-basic
+
+  # PolyZone #
+  - action: download_github
+    dest: ./resources/[standalone]/PolyZone
+    ref: master
+    src: https://github.com/ugcore-framework/PolyZone
+
+  # ox_lib #
+  - action: download_file
+    path: ./tmp/ug-core/files/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/ug-core/files/ox_lib.zip
+
+  # ox_target #
+  - action: download_file
+    path: ./tmp/ug-core/files/ox_target.zip
+    url: https://github.com/overextended/ox_target/releases/latest/download/ox_target.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/ug-core/files/ox_target.zip
+  
+  # LegacyFuel #
+  - action: download_github
+    dest: ./resources/[standalone]/LegacyFuel
+    ref: master
+    src: https://github.com/ugcore-framework/LegacyFuel
+
+  # Prevents GitHub from throttling #
+  - action: waste_time
+    seconds: 5
+
+  # UgCore #
+  - action: download_github
+    dest: ./resources/[UgCore]/ug-core
+    ref: main
+    src: https://github.com/ugcore-framework/ug-core
+  - action: download_github
+    dest: ./resources/[UG]/ug-notify
+    ref: main
+    src: https://github.com/ugcore-framework/ug-notify
+  - action: download_github
+    dest: ./resources/[UG]/ug-textUI
+    ref: main
+    src: https://github.com/ugcore-framework/ug-textUI
+  - action: download_github
+    dest: ./resources/[UG]/ug-progressBar
+    ref: main
+    src: https://github.com/ugcore-framework/ug-progressBar
+  - action: download_github
+    dest: ./resources/[UG]/ug-menu
+    ref: main
+    src: https://github.com/ugcore-framework/ug-menu
+  - action: download_github
+    dest: ./resources/[UG]/ug-dialogMenu
+    ref: main
+    src: https://github.com/ugcore-framework/ug-dialogMenu
+  - action: download_github
+    dest: ./resources/[UG]/ug-listMenu
+    ref: main
+    src: https://github.com/ugcore-framework/ug-listMenu
+  - action: download_github
+    dest: ./resources/[UG]/ug-contextMenu
+    ref: main
+    src: https://github.com/ugcore-framework/ug-contextMenu
+  - action: download_github
+    dest: ./resources/[UG]/ug-accounts
+    ref: main
+    src: https://github.com/ugcore-framework/ug-accounts
+  - action: download_github
+    dest: ./resources/[UG]/ug-skin
+    ref: main
+    src: https://github.com/ugcore-framework/ug-skin
+
+  # Prevents GitHub from throttling #
+  - action: waste_time
+    seconds: 5
+
+  - action: download_github
+    dest: ./resources/[UG]/ug-identity
+    ref: main
+    src: https://github.com/ugcore-framework/ug-identity
+  - action: download_github
+    dest: ./resources/[UG]/ug-hud
+    ref: main
+    src: https://github.com/ugcore-framework/ug-hud
+  - action: download_github
+    dest: ./resources/[UG]/ug-admin
+    ref: main
+    src: https://github.com/ugcore-framework/ug-admin
+  - action: download_github
+    dest: ./resources/[UG]/ug-policeJob
+    ref: main
+    src: https://github.com/ugcore-framework/ug-policeJob
+  - action: download_github
+    dest: ./resources/[UG]/ug-status
+    ref: main
+    src: https://github.com/ugcore-framework/ug-status
+
+  ###########
+  # Cleaner #
+  ###########
+  - action: remove_path
+    path: ./tmp
