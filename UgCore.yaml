@@ -66,6 +66,12 @@ tasks:
     ref: master
     src: https://github.com/ugcore-framework/PolyZone
 
+  # dpemotes #
+  - action: download_github
+    dest: ./resources/[standalone]/dpemotes
+    ref: master
+    src: https://github.com/ugcore-framework/dpemotes
+
   # ox_lib #
   - action: download_file
     path: ./tmp/ug-core/files/ox_lib.zip
