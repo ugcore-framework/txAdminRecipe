@@ -90,7 +90,7 @@ tasks:
   
   # LegacyFuel #
   - action: download_github
-    dest: ./resources/[standalone]/LegacyFuel
+    dest: ./resources/[UG]/LegacyFuel
     ref: master
     src: https://github.com/ugcore-framework/LegacyFuel
 
