@@ -93,6 +93,12 @@ tasks:
     dest: ./resources/[standalone]/LegacyFuel
     ref: master
     src: https://github.com/ugcore-framework/LegacyFuel
+  
+  # pma-voice #
+  - action: download_github
+    dest: ./resources/[standalone]/pma-voice
+    ref: main
+    src: https://github.com/ugcore-framework/pma-voice
 
   # Prevents GitHub from throttling #
   - action: waste_time
